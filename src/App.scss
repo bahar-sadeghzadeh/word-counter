@@ -1,0 +1,93 @@
+$borderColorInitial: rgba(0, 0, 0, 0.15);
+$borderColorClicked: #19b394;
+$boxShadowColor: rgba(25, 179, 128, 0.8);
+$boxShadowSpread: 5px;
+$transitionDuration: 0.15s;
+
+.App {
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  background-color: #f3f3f3;
+  height: 100vh;
+  width: 100%;
+  box-sizing: border-box;
+  margin: auto;
+  gap: 16px;
+  padding: 16px;
+
+  &-option {
+    color: #19b394;
+  }
+
+  &_toolbox {
+    display: flex;
+    flex-direction: row;
+    height: 30px;
+    padding: 5px;
+    border-radius: 4px;
+    box-shadow: 0px 0px 25px rgba(0, 0, 0, 0.2);
+
+    &_button {
+      margin-right: 5px;
+      border-color: #f3f3f3;
+      border-radius: 4px;
+      box-shadow: 0px 10px 25px rgba(0, 0, 0, 0.2);
+
+      &--bold {
+        font-size: large;
+        font-weight: bold;
+      }
+      &--small {
+        font-size: x-small;
+      }
+      &--normal {
+        font-size: small;
+      }
+      &--large {
+        font-size: large;
+      }
+      &--huge {
+        font-size: x-large;
+      }
+    }
+  }
+
+  &_editor {
+    display: flex;
+    flex-direction: row;
+
+    &-textarea {
+      flex-grow: 1;
+      padding: 10px;
+      margin-right: 10px;
+      border: 1px solid $borderColorInitial;
+      border-radius: 4px;
+      box-shadow: inset 0px 1px 2px rgba(0, 0, 0, 0.15);
+      transition: border $transitionDuration;
+
+      &:focus,
+      &:hover {
+        outline: none;
+        border-color: $borderColorClicked;
+        box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075),
+          0 0 $boxShadowSpread $boxShadowColor;
+      }
+
+      &--bold {
+        font-weight: bold;
+      }
+    }
+
+    &_resultbox {
+      font-size: small;
+      display: flex;
+      flex-direction: column;
+      background-color: white;
+      border-radius: 4px;
+      box-shadow: 0px 0px 25px rgba(0, 0, 0, 0.2);
+      padding: 10px;
+      text-align: left;
+    }
+  }
+}
