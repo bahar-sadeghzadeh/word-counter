@@ -45,7 +45,10 @@ function App() {
         >
           Huge
         </button>
-        <button className="App_toolbox_button" onClick={() => setBold(!bold)}>
+        <button
+          className="App_toolbox_button"
+          onClick={() => setInputValue("")}
+        >
           Clear
         </button>
       </div>
